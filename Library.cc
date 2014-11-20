@@ -19,7 +19,7 @@ Library::~Library()
 	for (int i=0; i<maxPatronsIndex; ++i)
 		delete patrons[i];*/
 
-//	delete books;
+	delete books;
 	delete patroncollection;
 	delete storage;
 }

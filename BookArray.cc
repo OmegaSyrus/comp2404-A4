@@ -28,7 +28,7 @@ BookArray::BookArray(BookArray* other)
 	}
 }
 
-BookArray& BookArray::operator+=(Book& book) {
+BookArray& BookArray::operator+=(Book* book) {
 		this->AddBook(&book);
 		
 		return *this;

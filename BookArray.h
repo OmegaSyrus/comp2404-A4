@@ -13,7 +13,7 @@ public:
 	BookArray();
 	~BookArray();
 	BookArray(BookArray* other);
-	BookArray& operator+=(Book& book);
+	BookArray& operator+=(Book* book);
 	void AddBook(Book* book);
 	void RemoveBook(Book* book);
 	void RemoveBook(int index);

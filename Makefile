@@ -1,10 +1,10 @@
-OBJ = main.o PLScontrol.o View.o Book.o Patron.o Library.o DepArray.o BookArray.o PatronArray.o Storage.o
+OBJ = main.o PLScontrol.o View.o Book.o Patron.o Library.o DepArray.o BookArray.o PatronArray.o Storage.o Server.o Child.o Adult.o PDeque.o
 
 
 
-a1:	$(OBJ)
+a4:	$(OBJ)
 
-	g++ -o a1 $(OBJ)
+	g++ -o a4 $(OBJ)
 
 
 
@@ -14,7 +14,7 @@ main.o:	main.cc types.h
 
 
 
-PLScontrol.o:	PLScontrol.cc PLScontrol.h types.h
+PLScontrol.o:	PLScontrol.cc PLScontrol.h types.h Patron.h Child.h Adult.h
 
 	g++ -c PLScontrol.cc
 
@@ -56,13 +56,20 @@ PatronArray.o: PatronArray.cc Patron.h
 
 		
 
-Storage.o:	Storage.cc Book.h Patron.h types.h PatronArray.h DepArray.h BookArray.h
+Storage.o:	Storage.cc Book.h Patron.h types.h PatronArray.h DepArray.h BookArray.h Server.h
 
 	g++ -c Storage.cc
 
 	
+Adult.o:	Adult.cc Patron.h
+	g++ -c Adult.cc
+
+Child.o:	Child.cc Patron.h
+	g++ -c Child.cc
 
 
+PDeque.o: PDeque.cc PDeque.h
+	g++ -c PDeque.cc
 
 DepArray.o: DepArray.cc DepArray.h Patron.h
 
@@ -72,4 +79,4 @@ DepArray.o: DepArray.cc DepArray.h Patron.h
 
 clean:
 
-	rm -f a1 *.o
+	rm -f a4 *.o
