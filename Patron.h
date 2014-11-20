@@ -42,7 +42,7 @@ class Patron
 	void	setLifetimeCO(int);
 	void	CleanUp();
 	DepArray*	getDepList();
-  private:
+  protected:
     string fname;
     string lname;
     int    lifetimeCO;

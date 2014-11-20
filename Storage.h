@@ -10,6 +10,7 @@
 #include "PDeque.h"
 #include "DepArray.h"
 #include "BookArray.h"
+#include "Server.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ private:
 	//collections
 	BookArray* books;
 	PDeque* patrons;
-	Server* server;
+	Server server;
 };
 
 #endif

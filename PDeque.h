@@ -50,7 +50,7 @@ private:
 		bool modify(Patron*);
 		bool remove(Patron*);
 		int 	getSize();
-		void	makeCopy(PDeque& other);
+		void	makeCopy(const PDeque& other);
 		
 	private:
 		void 	wipe();

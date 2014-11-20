@@ -2,14 +2,12 @@
 
 Storage::Storage() {
 
-	server = new Server();
-
-	Book*   newBook;
+	//Book*   newBook;
 	Patron* newPatron;
-	int id = 1000;
-	books = new BookArray();
+	//books = new BookArray();
 	patrons = new PDeque();
 
+	/*
 	newBook = new Book(id++, "Ender's Game", "Orson Scott Card", 1985);
 	books->AddBook(newBook);
 
@@ -59,7 +57,7 @@ Storage::Storage() {
 
 	newBook = new Book(id++, "Hyperion", "Dan Simmons", 1989);
 	books->AddBook(newBook);
-
+	*/
 
 	newPatron = new Patron("Jack", "Shephard");
 	patrons->push(newPatron);
@@ -99,7 +97,7 @@ Storage::~Storage() {
 void Storage::retBooks(BookArray* bookArr) {
 	delete bookArr;
 
-	Server.retrieve(*bookarr);
+	server.retrieve(*bookArr);
 
 }
 void Storage::retPatrons(PDeque* patronArr) {

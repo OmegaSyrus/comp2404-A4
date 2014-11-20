@@ -2,14 +2,12 @@
 
 int Book::nextId = 1001;
 
-Book::Book(int id, string t, string a, int y, BookStatusTyp y) 
-  : title(t), author(a), year(y)
+Book::Book(string t, string a, int y, BookStatusType type) 
+	: title(t), author(a), year(y), status(type)
 { 
-  this->id     = id;
-  status = CHECKED_IN;
+  this->id     = nextId++;
 }
 Book::Book(Book* book) {
-	nextId = book->nextId;
 	id = book->id;
 	title = book->title;
 	author = book->author;
@@ -24,7 +22,7 @@ void Book::setStatus(BookStatusType s)
 }
 
 Book* Book::copy() {
-	Book* temp = new Book(this->id , this->title, this->author, this->year);
+	Book* temp = new Book(this->title, this->author, this->year, this->status);
 	temp->setStatus(this->status);
 
 	return temp;

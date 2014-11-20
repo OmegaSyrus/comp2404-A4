@@ -182,7 +182,7 @@ bool PDeque::remove(Patron* patron) {	//look for patron, if found remove them
 int 	PDeque::getSize() { return size; }
 
 //make a deep copy
-void PDeque::makeCopy(PDeque& other) {
+void PDeque::makeCopy(const PDeque& other) {
 	//cover base cases
 	if (this->size > 0 || other.size == 0) {
 		this->wipe();

@@ -15,6 +15,8 @@ fname(other.fname), lname(other.lname), lifetimeCO(other.lifetimeCO){
 }
 
 Patron::~Patron() {
+	delete dependents;
+	delete books;
 }
 
 int Patron::getType() {
@@ -41,8 +43,8 @@ Patron& Patron::operator=(const Patron& other) {
 	//create the new bookarray
 	this->books = new BookArray();
 	
-	for (int i = 0; i < other.books.GetCurrentIndex(); i++) {
-		this->books.add(other.books.GetBook(i));
+	for (int i = 0; i < other.books->GetCurrentIndex(); i++) {
+		this->books->AddBook(other.books->GetBook(i));
 	}
 	
 	return *this;

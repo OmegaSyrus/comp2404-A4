@@ -23,8 +23,8 @@ void PLScontrol::launch()
 
 void PLScontrol::addPatron() 
 {
-  Patron *patron;
-  Patron * parent = NULL;
+  Patron patron;
+  Patron* parent = NULL;
   string fn, ln;
   int    rc;
   int age;
@@ -32,19 +32,21 @@ void PLScontrol::addPatron()
   view->getPatronName(fn, ln);
   view->getPatronAge(&age);
 
-  patron = new Patron(fn, ln);
+
   if (age < 18) {
+	  Child temp = Child(fn, ln);
 	  while (parent == NULL) {
 		  view->getPatronParent(fn, ln);
 
 		  parent = lib->findPatron(fn, ln);
 		  if (parent != NULL)
-			  patron->setParent(parent);
-			  lib->addDependent(parent, patron);
+			  temp.setParent(parent);
+			  lib->addDependent(parent, &temp);
 	  }
   }
+  else patron = Adult(fn, ln);
 
-  rc = lib->addPatron(patron);
+  rc = lib->addPatron(&patron);
   if (rc != C_OK) {
     view->printError("\nCould not add patron to library, press <ENTER> to continue...");
   }

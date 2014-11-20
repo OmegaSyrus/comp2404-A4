@@ -4,6 +4,9 @@
 #include "types.h"
 #include "Library.h"
 #include "View.h"
+#include "Adult.h"
+#include "Child.h"
+#include "Patron.h"
 
 class View;
 

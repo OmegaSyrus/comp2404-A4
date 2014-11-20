@@ -12,7 +12,7 @@
 
 class DepArray;
 
-class Adult : Patron
+class Adult : public Patron
 {
   public:
     Adult(string="", string="");
