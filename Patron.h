@@ -20,6 +20,8 @@ class Patron
 	bool operator==(const Patron& other);
 	Patron& operator=(const Patron& other);
 
+	virtual int getType();
+	
     void	addBook(Book*);
     void	remBook(Book*);
 	void	addDependent(Patron* dep);
@@ -34,11 +36,10 @@ class Patron
 	int		getMaxBooksIndex();
 	int		getMaxDepIndex();
     int		getLifetimeCO();
-	int		computeLifetimeCO();
+	virtual int		computeLifetimeCO();
 	Patron* getParent();
 	bool	hasDependents();
 	void	setLifetimeCO(int);
-	void	setParent(Patron*);
 	void	CleanUp();
 	DepArray*	getDepList();
   private:

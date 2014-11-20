@@ -17,6 +17,10 @@ fname(other.fname), lname(other.lname), lifetimeCO(other.lifetimeCO){
 Patron::~Patron() {
 }
 
+int Patron::getType() {
+	return 0;
+}
+
 bool Patron::operator==(const Patron& other) {
 	if (this->getFname() == other.getFname() &&
 		this->getLname() == other.getLname()) return true;
@@ -114,9 +118,6 @@ void	Patron::remDependent(Patron* dep) {
 }
 
 /////////SETTERS
-void Patron::setParent(Patron* parent) {
-	this->dependents->SetParent(parent);
-}
 void Patron::setLifetimeCO(int co) {
 	this->lifetimeCO = co;
 }

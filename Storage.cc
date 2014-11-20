@@ -2,6 +2,8 @@
 
 Storage::Storage() {
 
+	server = new Server();
+
 	Book*   newBook;
 	Patron* newPatron;
 	int id = 1000;
@@ -97,7 +99,7 @@ Storage::~Storage() {
 void Storage::retBooks(BookArray* bookArr) {
 	delete bookArr;
 
-	bookArr = new BookArray(books);
+	Server.retrieve(*bookarr);
 
 }
 void Storage::retPatrons(PDeque* patronArr) {

@@ -32,6 +32,7 @@ private:
 	//collections
 	BookArray* books;
 	PDeque* patrons;
+	Server* server;
 };
 
 #endif

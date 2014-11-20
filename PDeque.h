@@ -36,6 +36,7 @@ private:
 	public:
 		PDeque();
 		PDeque(Patron* firstElement);
+		PDeque(const PDeque& other);
 		~PDeque();
 		PDeque& operator--();
 		PDeque operator--(int);

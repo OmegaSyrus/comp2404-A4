@@ -11,6 +11,10 @@ PDeque::PDeque(Patron* firstElement) {
 	head = new Node(firstElement);
 }
 
+PDeque::PDeque(const PDeque& other) {
+	this->makeCopy(other);
+}
+
 PDeque::~PDeque() {
 	if (size == 0) return;
 
@@ -26,6 +30,18 @@ PDeque::~PDeque() {
 	head = 0;
 	size = 0;
 	
+}
+
+PDeque& PDeque::operator--() {
+	this->popFront();
+	
+	return *this;
+}
+
+PDeque PDeque::operator--(int) {
+	this->popBack();
+	
+	return *this;
 }
 
 void PDeque::push(Patron* patron) {
